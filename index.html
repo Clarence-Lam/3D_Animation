@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<title>top</title>
+<link rel="stylesheet" href="css/animate.css">
+<style>
+html, body {
+	height: 100%;
+}
+
+body {
+	background-color: #000;
+	/*background-image: url(xk01.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;*/
+	margin: 0;
+	font-family: Helvetica, sans-serif;
+	overflow: hidden;
+}
+
+a {
+	color: #ffffff;
+}
+
+#bgimage {
+	position: absolute;
+	margin: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(xk01.jpg);
+	background-size: 100% 100%;
+	z-index: -999;
+}
+#bgimage2 {
+	position: absolute;
+	margin: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(xk02.jpg);
+	background-size: 100% 100%;
+	z-index: -888;
+	visibility: hidden;
+}
+
+#menu {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	text-align: center;
+	visibility: hidden;
+}
+
+.element {
+	/*width: 120px; height: 160px;*/
+	width: 150px; height: 150px;
+	/*box-shadow: 0px 0px 12px rgba(0,255,255,0.5);*/
+	/*border: 1px solid rgba(127,255,255,0.25);*/
+	text-align: center;
+	cursor: default;
+}
+
+.element:hover {
+	box-shadow: 0px 0px 12px rgba(0,255,255,0.75);
+	border: 1px solid rgba(127,255,255,0.75);
+}
+
+	.element .number {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		font-size: 12px;
+		color: rgba(127,255,255,0.75);
+	}
+
+	.element .symbol {
+		position: absolute;
+		top: 40px;
+		left: 0px;
+		right: 0px;
+		font-size: 60px;
+		font-weight: bold;
+		color: rgba(255,255,255,0.75);
+		text-shadow: 0 0 10px rgba(0,255,255,0.95);
+	}
+
+	.element .details {
+		position: absolute;
+		bottom: 15px;
+		left: 0px;
+		right: 0px;
+		font-size: 12px;
+		color: rgba(127,255,255,0.75);
+	}
+
+button {
+	color: rgba(127,255,255,0.75);
+	background: transparent;
+	outline: 1px solid rgba(127,255,255,0.75);
+	border: 0px;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+button:hover {
+	background-color: rgba(0,255,255,0.5);
+}
+button:active {
+	color: #000000;
+	background-color: rgba(0,255,255,0.75);
+}
+
+.grid {
+	width: 900px; height: 675px;
+	margin: 5% auto;
+	perspective: 500px; /*For 3d*/
+}
+.grid img {
+	/*width: 70px; height: 70px;*/
+	width: 60px; height: auto;
+	display: block; float: left;
+}
+.flip {
+	transition: all 3.5s;
+	transform-style: preserve-3d;
+	transform: rotateY(90deg);
+}
+.flip2 {
+	transition: all 3.5s;
+	transform-style: preserve-3d;
+	transform: rotateY(180deg);
+}
+
+.animate {
+	text-transform: uppercase;
+	background: rgb(0, 100, 0); color: white;
+	padding: 10px 20px; border-radius: 5px;
+	cursor: pointer;margin:10px auto;width:100px;text-align:center;
+}
+.animate:hover {background: rgb(0, 75, 0);}
+
+video#myvideo { 
+	position: absolute;
+	left: 0; top: 0;
+	min-width: 100%; min-height: 100%;
+	width: 100%; height: 100%; z-index: -100;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: "微软雅黑";
+}
+ul li{
+	list-style: none;
+}
+.clearfix{ 
+  *zoom: 1; 
+}
+.clearfix:before, 
+.clearfix:after { 
+  display: table; 
+  line-height: 0; 
+  content: ""; 
+}
+.clearfix:after { 
+  clear: both; 
+}
+.popup-container{
+	position: fixed;
+	z-index: 9999;
+	width: 100%;
+	height: 100%;
+	/*background-color: rgba(0,0,0,0.85);*/
+	overflow: hidden;
+	position: absolute;
+    top: 0;
+	left:0;
+}
+.img-flex{
+	position: absolute;
+}
+.img-flex ul{
+	font-size: 0;
+}
+.img-flex ul li{
+	display: block;
+	background-repeat: no-repeat;
+	float: left;
+	position: relative;
+}
+
+.talent img{
+	position: absolute;
+	display: none;
+}
+#talent1{
+	width: 33%;
+    /* transform: rotateZ(-15deg); */
+    top: 9%;
+    left: 8%;
+}
+#talent2{    
+	width: 38%;
+    left: 48%;
+    /* transform: rotateZ(15deg); */
+    top: 8%;
+}
+#talent3{
+	width: 33%;
+    top: 38%;
+    left: 18%;
+    /* transform: rotate(6deg); */
+
+}
+#talent4{
+	width: 34%;
+    left: 59%;
+    top: 41%;
+    /* transform: rotate(20deg); */
+}
+#talent5{
+	width: 29%;
+    left: 46%;
+    top: 67%;
+}
+#talent6{
+	width: 32%;
+    top: 67%;
+	left: 10%;
+}
+</style>
+</head>
+<body onkeypress="spark();">
+<script src="js/three.min.js"></script>
+<script src="js/tween.min.js"></script>
+<script src="js/TrackballControls.js"></script>
+<script src="js/CSS3DRenderer.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/fragment.js"></script>
+
+<div id="container"></div>
+<div id="menu">
+	<button id="table">TABLE</button>
+	<button id="sphere">SPHERE</button>
+	<button id="helix">HELIX</button>
+	<button id="grid">GRID</button>
+	<button id="test">TEST</button>
+</div>
+<div id="bgimage"></div>
+<div id="bgimage2"></div>
+<div class="animate" style="visibility: hidden;">animate</div>
+<div class="popup-container">
+	<div class="img-flex" id="logoT"></div>
+	<div class="img-flex" id="logoS"></div>
+	<div class="img-flex" id="logo10000"></div>
+	<div class="img-flex" id="logostqyzx"></div>
+</div>
+<script>
+var table = [
+	"Rb", "Rubidium", "85.4678", 1, 1,
+	"Sr", "Strontium", "87.62", 2, 1,
+	"Y", "Yttrium", "88.90585", 3, 1,
+	"Zr", "Zirconium", "91.224", 4, 1,
+	"Nb", "Niobium", "92.90628", 5, 1,
+	"Mo", "Molybdenum", "95.96", 6, 1,
+	"Tc", "Technetium", "(98)", 7, 1,
+	"Ru", "Ruthenium", "101.07", 8, 1,
+	"Rh", "Rhodium", "102.9055", 9, 1,
+	"Pd", "Palladium", "106.42", 10, 1,
+	"Ag", "Silver", "107.8682", 11, 1,
+	"Cd", "Cadmium", "112.411", 12, 1,
+	"In", "Indium", "114.818", 13, 1,
+	"Sn", "Tin", "118.71", 14, 1,
+	"Sb", "Antimony", "121.76", 15, 1,
+	"Te", "Tellurium", "127.6", 16, 1,
+	"I", "Iodine", "126.90447", 17, 1,
+	"Xe", "Xenon", "131.293", 18, 1,
+	"Rb", "Rubidium", "85.4678", 1, 2,
+	"Sr", "Strontium", "87.62", 2, 2,
+	"Y", "Yttrium", "88.90585", 3, 2,
+	"Zr", "Zirconium", "91.224", 4, 2,
+	"Nb", "Niobium", "92.90628", 5, 2,
+	"Mo", "Molybdenum", "95.96", 6, 2,
+	"Tc", "Technetium", "(98)", 7, 2,
+	"Ru", "Ruthenium", "101.07", 8, 2,
+	"Rh", "Rhodium", "102.9055", 9, 2,
+	"Pd", "Palladium", "106.42", 10, 2,
+	"Ag", "Silver", "107.8682", 11, 2,
+	"Cd", "Cadmium", "112.411", 12, 2,
+	"In", "Indium", "114.818", 13, 2,
+	"Sn", "Tin", "118.71", 14, 2,
+	"Sb", "Antimony", "121.76", 15, 2,
+	"Te", "Tellurium", "127.6", 16, 2,
+	"I", "Iodine", "126.90447", 17, 2,
+	"Xe", "Xenon", "131.293", 18, 2,
+	"Rb", "Rubidium", "85.4678", 1, 3,
+	"Sr", "Strontium", "87.62", 2, 3,
+	"Y", "Yttrium", "88.90585", 3, 3,
+	"Zr", "Zirconium", "91.224", 4, 3,
+	"Nb", "Niobium", "92.90628", 5, 3,
+	"Mo", "Molybdenum", "95.96", 6, 3,
+	"Tc", "Technetium", "(98)", 7, 3,
+	"Ru", "Ruthenium", "101.07", 8, 3,
+	"Rh", "Rhodium", "102.9055", 9, 3,
+	"Pd", "Palladium", "106.42", 10, 3,
+	"Ag", "Silver", "107.8682", 11, 3,
+	"Cd", "Cadmium", "112.411", 12, 3,
+	"In", "Indium", "114.818", 13, 3,
+	"Sn", "Tin", "118.71", 14, 3,
+	"Sb", "Antimony", "121.76", 15, 3,
+	"Te", "Tellurium", "127.6", 16, 3,
+	"I", "Iodine", "126.90447", 17, 3,
+	"Xe", "Xenon", "131.293", 18, 3,
+	"Rb", "Rubidium", "85.4678", 1, 4,
+	"Sr", "Strontium", "87.62", 2, 4,
+	"Y", "Yttrium", "88.90585", 3, 4,
+	"Zr", "Zirconium", "91.224", 4, 4,
+	"Nb", "Niobium", "92.90628", 5, 4,
+	"Mo", "Molybdenum", "95.96", 6, 4,
+	"Tc", "Technetium", "(98)", 7, 4,
+	"Ru", "Ruthenium", "101.07", 8, 4,
+	"Rh", "Rhodium", "102.9055", 9, 4,
+	"Pd", "Palladium", "106.42", 10, 4,
+	"Ag", "Silver", "107.8682", 11, 4,
+	"Cd", "Cadmium", "112.411", 12, 4,
+	"In", "Indium", "114.818", 13, 4,
+	"Sn", "Tin", "118.71", 14, 4,
+	"Sb", "Antimony", "121.76", 15, 4,
+	"Te", "Tellurium", "127.6", 16, 4,
+	"I", "Iodine", "126.90447", 17, 4,
+	"Xe", "Xenon", "131.293", 18, 4,
+	"Rb", "Rubidium", "85.4678", 1, 5,
+	"Sr", "Strontium", "87.62", 2, 5,
+	"Y", "Yttrium", "88.90585", 3, 5,
+	"Zr", "Zirconium", "91.224", 4, 5,
+	"Nb", "Niobium", "92.90628", 5, 5,
+	"Mo", "Molybdenum", "95.96", 6, 5,
+	"Tc", "Technetium", "(98)", 7, 5,
+	"Ru", "Ruthenium", "101.07", 8, 5,
+	"Rh", "Rhodium", "102.9055", 9, 5,
+	"Pd", "Palladium", "106.42", 10, 5,
+	"Ag", "Silver", "107.8682", 11, 5,
+	"Cd", "Cadmium", "112.411", 12, 5,
+	"In", "Indium", "114.818", 13, 5,
+	"Sn", "Tin", "118.71", 14, 5,
+	"Sb", "Antimony", "121.76", 15, 5,
+	"Te", "Tellurium", "127.6", 16, 5,
+	"I", "Iodine", "126.90447", 17, 5,
+	"Xe", "Xenon", "131.293", 18, 5,
+	"Rb", "Rubidium", "85.4678", 1, 6,
+	"Sr", "Strontium", "87.62", 2, 6,
+	"Y", "Yttrium", "88.90585", 3, 6,
+	"Zr", "Zirconium", "91.224", 4, 6,
+	"Nb", "Niobium", "92.90628", 5, 6,
+	"Mo", "Molybdenum", "95.96", 6, 6,
+	"Tc", "Technetium", "(98)", 7, 6,
+	"Ru", "Ruthenium", "101.07", 8, 6,
+	"Rh", "Rhodium", "102.9055", 9, 6,
+	"Pd", "Palladium", "106.42", 10, 6,
+	"Ag", "Silver", "107.8682", 11, 6,
+	"Cd", "Cadmium", "112.411", 12, 6,
+	"In", "Indium", "114.818", 13, 6,
+	"Sn", "Tin", "118.71", 14, 6,
+	"Sb", "Antimony", "121.76", 15, 6,
+	"Te", "Tellurium", "127.6", 16, 6,
+	"I", "Iodine", "126.90447", 17, 6,
+	"Xe", "Xenon", "131.293", 18, 6,
+	"Rb", "Rubidium", "85.4678", 1, 7,
+	"Sr", "Strontium", "87.62", 2, 7,
+	"Y", "Yttrium", "88.90585", 3, 7,
+	"Zr", "Zirconium", "91.224", 4, 7,
+	"Nb", "Niobium", "92.90628", 5, 7,
+	"Mo", "Molybdenum", "95.96", 6, 7,
+	"Tc", "Technetium", "(98)", 7, 7,
+	"Ru", "Ruthenium", "101.07", 8, 7,
+	"Rh", "Rhodium", "102.9055", 9, 7,
+	"Pd", "Palladium", "106.42", 10, 7,
+	"Ag", "Silver", "107.8682", 11, 7,
+	"Cd", "Cadmium", "112.411", 12, 7,
+	"In", "Indium", "114.818", 13, 7,
+	"Sn", "Tin", "118.71", 14, 7,
+	"Sb", "Antimony", "121.76", 15, 7,
+	"Te", "Tellurium", "127.6", 16, 7,
+	"I", "Iodine", "126.90447", 17, 7,
+	"Xe", "Xenon", "131.293", 18, 7,
+	"Rb", "Rubidium", "85.4678", 1, 8,
+	"Sr", "Strontium", "87.62", 2, 8,
+	"Y", "Yttrium", "88.90585", 3, 8,
+	"Zr", "Zirconium", "91.224", 4, 8,
+	"Nb", "Niobium", "92.90628", 5, 8,
+	"Mo", "Molybdenum", "95.96", 6, 8,
+	"Tc", "Technetium", "(98)", 7, 8,
+	"Ru", "Ruthenium", "101.07", 8, 8,
+	"Rh", "Rhodium", "102.9055", 9, 8,
+	"Pd", "Palladium", "106.42", 10, 8,
+	"Ag", "Silver", "107.8682", 11, 8,
+	"Cd", "Cadmium", "112.411", 12, 8,
+	"In", "Indium", "114.818", 13, 8,
+	"Sn", "Tin", "118.71", 14, 8,
+	"Sb", "Antimony", "121.76", 15, 8,
+	"Te", "Tellurium", "127.6", 16, 8,
+	"I", "Iodine", "126.90447", 17, 8,
+	"Xe", "Xenon", "131.293", 18, 8,
+	"Rb", "Rubidium", "85.4678", 1, 9,
+	"Sr", "Strontium", "87.62", 2, 9,
+	"Y", "Yttrium", "88.90585", 3, 9,
+	"Zr", "Zirconium", "91.224", 4, 9,
+	"Nb", "Niobium", "92.90628", 5, 9,
+	"Mo", "Molybdenum", "95.96", 6, 9,
+	"Tc", "Technetium", "(98)", 7, 9,
+	"Ru", "Ruthenium", "101.07", 8, 9,
+	"Rh", "Rhodium", "102.9055", 9, 9,
+	"Pd", "Palladium", "106.42", 10, 9,
+	"Ag", "Silver", "107.8682", 11, 9,
+	"Cd", "Cadmium", "112.411", 12, 9,
+	"In", "Indium", "114.818", 13, 9,
+	"Sn", "Tin", "118.71", 14, 9,
+	"Sb", "Antimony", "121.76", 15, 9,
+	"Te", "Tellurium", "127.6", 16, 9,
+	"I", "Iodine", "126.90447", 17, 9,
+	"Xe", "Xenon", "131.293", 18, 9,
+	"Rb", "Rubidium", "85.4678", 1, 10,
+	"Sr", "Strontium", "87.62", 2, 10,
+	"Y", "Yttrium", "88.90585", 3, 10,
+	"Zr", "Zirconium", "91.224", 4, 10,
+	"Nb", "Niobium", "92.90628", 5, 10,
+	"Mo", "Molybdenum", "95.96", 6, 10,
+	"Tc", "Technetium", "(98)", 7, 10,
+	"Ru", "Ruthenium", "101.07", 8, 10,
+	"Rh", "Rhodium", "102.9055", 9, 10,
+	"Pd", "Palladium", "106.42", 10, 10,
+	"Ag", "Silver", "107.8682", 11, 10,
+	"Cd", "Cadmium", "112.411", 12, 10,
+	"In", "Indium", "114.818", 13, 10,
+	"Sn", "Tin", "118.71", 14, 10,
+	"Sb", "Antimony", "121.76", 15, 10,
+	"Te", "Tellurium", "127.6", 16, 10,
+	"I", "Iodine", "126.90447", 17, 10,
+	"Xe", "Xenon", "131.293", 18, 10
+];
+var pics = 0;
+var start, end;
+
+var camera, scene, renderer;
+var controls;
+
+var objects = [];
+var targets = { table: [], sphere: [], helix: [], grid: [] };
+
+
+///////////////////////////////////////////
+// timer to shine stars
+setInterval(function() {
+	$('#bgimage2').css('visibility', 'visible');
+
+	setTimeout(function() {
+		$('#bgimage2').css('visibility', 'hidden');
+	}, Math.random() * 500);
+
+}, 1000);
+
+// function spark(){
+// 	showTalent();
+// }
+
+function spark() {
+	if(window.event.keyCode!=13)
+		return;
+
+	start = new Date().getTime();
+	var pageX = $('body').width();
+	var pageY = $('body').height();
+	// alert('pageX: '+pageX+', pageY: '+pageY);
+
+	var audio = '<audio id="bgmusic" src="new.mp3" autoplay></audio>';
+	$('body').append(audio);
+	init();
+	animate();
+	
+	////////////////////////////////////////////
+	var layouts = calcLineLayout(576, pageX);
+
+	////////////////////////////////////////////
+	// delay to transform to sphere
+	setTimeout(function() {
+		$('#sphere').click();
+	}, 1000*10);
+
+	////////////////////////////////////////////
+	// delay to zoom sphere
+	setTimeout(function() {
+		controls.zoomSphere(1);
+		// hackcode
+		$("img").each(function() {
+			if($(this).attr('src')=='images/pic1.jpg') {
+				$(this).css('visibility', 'hidden');
+			}
+		});
+	}, 1000*12);
+
+	////////////////////////////////////////////
+	// rotate sphere
+	var x1,y1,x2=0,y2=pageY/2;
+	var ins=0; // ms delay to zoom sphere again
+	var k=0; // control where x pixel to move
+	setTimeout(function() {
+		setInterval(function() {
+			x1 = layouts[k].x;
+			if(k==0)
+				controls.pressBall(x1, y2);
+			k++;
+
+			if(k==layouts.length) {
+				k=0;
+				controls.releaseBall();
+			} else {
+				x2 = layouts[k].x;
+				controls.moveBall(x2, y2);
+			}
+
+			ins += 150;
+			if(ins==150*50)
+				controls.zoomSphere(4);
+		}, 150);
+
+	}, 1000*14);
+
+	/////////////////////////////////////////////
+	// times for showing 3D effect
+	setTimeout(function() {
+		$(".element").each(function() {
+			d = Math.random()*2000; //1ms to 1000ms delay
+			$(this).delay(d).animate({opacity: 0}, {
+				step: function(n) {
+					s = 1-n; //scale - will animate from 0 to 1
+					$(this).css("transform", "scale("+s+")");
+				}, 
+				duration: 100, 
+			});
+		}).promise().done(function() {
+			$('.animate').click();
+		});
+
+	}, 1000*51);
+
+	//////////////////////////////////////////////
+	// show pics grid
+	var d = 0; //delay
+	var ry, tz, s; //transform params
+
+	// animation time
+	$(".animate").on("click", function() {
+		// 2016年第二个照片墙
+		var grid = '<div class="grid"></div>';
+		$('body').prepend(grid);
+		var images = "", count = 135;
+		for(var i = 1; i <= count; i++) {
+			images += '<img src="images/pic'+i+'.jpg" style="margin: 0 0 15px 0;" />';
+		}
+			
+		//appending the images to .grid
+		$(".grid").css('visibility','hidden');
+		$(".grid").append(images);
+		
+		$("img").each(function() {
+			if(!this.id) {
+				d = Math.random()*2000; //1ms to 1000ms delay
+				d = 1;
+				$(this).delay(d).animate({opacity: 0}, {
+					step: function(n) {
+						s = 1-n; //scale - will animate from 0 to 1
+						$(this).css("transform", "scale("+s+")");
+					}, 
+					duration: 100, 
+				});
+			}
+		}).promise().done(function() {
+			storm();
+			// flashOut();
+			// console.log('第一个');
+		});
+
+		// 更改为达人
+		// var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+		// 	$("#talent1").show().css({"webkitAnimationDuration":"2.5s"}).addClass("zoomInDown").one(animationEnd, function() {//rubberBand flipInX rotateIn zoomIn zoomInDown jackInTheBox
+        //         setTimeout(() => {
+        //             $("#talent1").addClass('animated').addClass('zoomOut').one(animationEnd, function() {this.remove();showTalent()})
+        //         }, 2000);
+		//     });;
+
+		// showTalent();
+	});
+}
+
+// function showTalent(){
+// 	var _in = ['bounceIn','bounceInDown','bounceInLeft','bounceInRight','bounceInUp','fadeIn','fadeInDown','fadeInDownBig','fadeInLeft','fadeInLeftBig','fadeInRight','fadeInRightBig','fadeInUp','fadeInUpBig','rotateIn','rotateInDownLeft','rotateInDownRight','rotateInUpLeft','rotateInUpRight','slideInDown','slideInLeft','slideInRight'];
+// 	var _out = ['bounceOut','bounceOutDown','bounceOutLeft','bounceOutRight','bounceOutUp','fadeOut','fadeOutDown','fadeOutDownBig','fadeOutLeft','fadeOutLeftBig','fadeOutRight','fadeOutRightBig','fadeOutUp','fadeOutUpBig','rotateOut','rotateOutDownLeft','rotateOutDownRight','rotateOutUpLeft','rotateOutUpRight','slideOutDown','slideOutLeft','slideOutRight'];
+// 	var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+// 	// $(".talent").find("img").each(function(index, el) {
+// 	// 	let ai = 0;
+// 	// 	let outTime = 0;
+// 	// 	for (var i = 0; i < 19; i++) {
+// 	// 		setTimeout(()=>{
+// 	// 			$(".talent").find("img").eq(ai).show();
+// 	// 			if (ai===18) {
+// 	// 				setTimeout(()=>{
+// 	// 					$(".talent").addClass('animated').addClass('fadeOutDownBig').one(animationEnd, function() {this.remove();continueShow()});
+// 	// 				},1500);
+// 	// 			}
+// 	// 			ai+=1;
+// 	// 		},outTime);
+// 	// 		outTime+=200;
+// 	// 	}
+// 	// });
+// 	let outTime = 0;
+// 	for(let ss = 0;ss<6;ss++){
+// 		setTimeout(()=>{
+// 			var rand_in = parseInt(Math.random() * _in.length);
+// 			$(".talent").find("img").eq(ss).show().css({"webkitAnimationDuration":"3s"}).addClass(_in[rand_in]);
+// 		},outTime);
+// 		outTime+=200;
+// 	}
+// 	setTimeout(()=>{
+		
+// 		// $(".talent").find("img").each(function(index, el) {
+// 		// 	var rand_out = parseInt(Math.random() * _out.length);
+// 		// 	$(".talent").find("img").eq(index).addClass(_out[rand_out]).one(animationEnd, function() {
+// 		// 		this.remove()
+// 		// 	});
+// 		// })
+
+
+// 		// for(let ss = 0;ss<6;ss++){
+// 		// 		var rand_out = parseInt(Math.random() * _out.length);
+// 		// 		$(".talent").find("img").eq(ss).addClass(_out[rand_out]).one(animationEnd, function() {
+// 		// 			this.remove();
+// 		// 			if(ss==6)
+// 		// 				flashOut();
+// 		// 		});;
+// 		// }
+// 		$(".talent").addClass('animated').addClass('fadeOut').one(animationEnd, function() {this.remove();flashOut()});
+// 	},5000)
+// }
+
+//////////////////////////////////////////////////////////////////////////
+// custom code begin
+function format_number(number) {
+    return number< 10 ? '0' + number : number;
+}
+
+function calcCircularLayout(nodeSize, center, radius) {
+	var i, _i, _layouts = [];
+	for(i = _i = 0; _i < nodeSize; i = ++_i) {
+		var x = center.x + radius * Math.sin(2 * Math.PI * i / nodeSize),
+		    y = center.y + radius * Math.cos(2 * Math.PI * i / nodeSize);
+
+		_layouts.push({'x': x, 'y': y});
+	}
+
+	return _layouts;
+}
+function calcLineLayout(nodeSize, pageX) {
+	var i=0, _layouts = [];
+	for(i=0;i<nodeSize;i++) {
+		var x = pageX/nodeSize * i;
+			y = 0;
+		_layouts.push({'x': x, 'y': y});
+	}
+
+	return _layouts;
+}
+
+// fading out the thumbnails with style
+function flashOut() {
+	console.log('进入');
+	var logoT = {
+		container : '#logoT',//显示容器
+		line : 10,//多少行
+		column : 24,//多少列
+		width : 800,//显示容器的宽度
+		animeTime : 4500,//最长动画时间,图片的取值将在 animeTime*0.33 + animeTime*0.66之前取值 
+		img : 't.png',//图片路径
+		type:'top'
+	};
+	var logoS = {
+		container : '#logoS',//显示容器
+		line : 5,//多少行
+		column : 12,//多少列
+		width : 800,//显示容器的宽度
+		animeTime : 4500,//最长动画时间,图片的取值将在 animeTime*0.33 + animeTime*0.66之前取值 
+		img : 's.png',//图片路径	
+		type:'all'
+	};
+	var logo10000 = {
+		container : '#logo10000',//显示容器
+		line : 5,//多少行
+		column : 12,//多少列
+		width : 800,//显示容器的宽度
+		animeTime : 4500,//最长动画时间,图片的取值将在 animeTime*0.33 + animeTime*0.66之前取值 
+		img : '10000.png',//图片路径	
+		type:'all'
+	};
+	var logostqyzx = {
+		container : '#logostqyzx',//显示容器
+		line : 5,//多少行
+		column : 24,//多少列
+		width : 1000,//显示容器的宽度
+		animeTime : 3000,//最长动画时间,图片的取值将在 animeTime*0.33 + animeTime*0.66之前取值 
+		img : 'stqyzx.png',//图片路径	
+		type:'bottom'
+	}
+
+	$("img").each(function() {
+		if(!this.id) {
+			d = Math.random()*1000; //1ms to 1000ms delay
+			$(this).delay(d).animate({opacity: 0}, {
+				step: function(n) {
+					s = 1-n; //scale - will animate from 0 to 1
+					$(this).css("transform", "scale("+s+")");
+				}, 
+				duration: 500, 
+			});
+		}
+	}).promise().done(function() {
+		fragmentImg(logoT);
+		setTimeout(()=>{
+			fragmentImg(logoS);
+			fragmentImg(logo10000);
+		},4000);
+		setTimeout(()=>{
+			fragmentImg(logostqyzx);
+		},9000)
+		setTimeout(()=>{
+			$('#bgimage2').remove();
+			$('.popup-container').fadeOut(6000,'swing');
+			aStop();
+			$('#bgimage').fadeOut(5500,'linear',function() {
+				end = new Date().getTime();
+				console.log('elapse: '+(end - start));
+				// setTimeout(function(){
+					// $('#bgmusic').remove();
+
+					var video = '<video src="countdown.mp4" autoplay id="myvideo"></video>';
+					$('body').append(video);
+
+				// }, 2000);
+			});
+		},14000)
+
+	});
+}
+
+function aStop(){
+	var audio = document.getElementById("bgmusic");
+	// audio.currentTime = 0;
+	// audio.volume = 0;
+	var s = 1;
+	var ss =setInterval(()=>{
+		audio.volume = (s-0.1);
+		s=(s-0.1).toFixed(1);
+		console.log(s);
+		if(s<=0){
+			// console.log('11');
+			clearInterval(ss);
+			$('#bgmusic').remove();
+		}
+	},480)
+}
+//bringing back the images with style
+function storm()
+{
+	$(".grid").css('visibility','visible');
+	$("img").each(function() {
+		d = Math.random()*1000;
+		$(this).delay(d).animate({opacity: 1}, {
+			step: function(n) {
+				//rotating the images on the Y axis from 360deg to 0deg
+				ry = (1-n)*360;
+				//translating the images from 1000px to 0px
+				tz = (1-n)*1000;
+				//applying the transformation
+				$(this).css("transform", "rotateY("+ry+"deg) translateZ("+tz+"px)");
+			}, 
+			duration: 6000, 
+			//some easing fun. Comes from the jquery easing plugin.
+			easing: 'easeOutQuint', 
+		})
+	}).promise().done(function(){
+		$('.grid').addClass('flip');
+		var i = 136;
+		$('img').each(function(){
+			$(this).attr('src', "images/pic"+i+".jpg");
+			$(this).css('margin', '0 0 15px 0');
+			$(this).css("transform", "rotateY(180deg)");
+			i++;
+		}).promise().done(function(){
+			$('.grid').addClass('flip2');
+			setTimeout(function(){
+				console.log('第二个');
+				flashOut();
+			}, 6500);
+		});
+	});
+}
+
+// var layouts = calcCircularLayout(4, {x: pageX/2, y: pageY/2}, pageX/2);
+
+
+// alert('pics: '+pics);
+// end of custom code
+
+function init() {
+
+	camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 );
+	camera.position.z = 3000;
+
+	scene = new THREE.Scene();
+
+	// table
+	var j = 0;
+	for ( var i = 0; i < table.length; i +=5 ) {
+		j++;
+
+		var element = document.createElement( 'div' );
+		element.className = 'element';
+		// element.style.backgroundColor = 'rgba(0,127,127,' + ( Math.random() * 0.5 + 0.25 ) + ')';
+
+		var img = document.createElement('img');
+		img.src = 'images/pic'+j+'.jpg';
+		img.width = 150;
+		img.height = 150;
+		element.appendChild(img);
+		pics++;
+
+		// var number = document.createElement( 'div' );
+		// number.className = 'number';
+		// number.textContent = (i/5) + 1;
+		// element.appendChild( number );
+
+		// var symbol = document.createElement( 'div' );
+		// symbol.className = 'symbol';
+		// symbol.textContent = table[ i ];
+		// element.appendChild( symbol );
+
+		// var details = document.createElement( 'div' );
+		// details.className = 'details';
+		// details.innerHTML = table[ i + 1 ] + '<br>' + table[ i + 2 ];
+		// element.appendChild( details );
+
+		var object = new THREE.CSS3DObject( element );
+		object.position.x = Math.random() * 4000 - 2000;
+		object.position.y = Math.random() * 4000 - 2000;
+		object.position.z = Math.random() * 4000 - 2000;
+		scene.add( object );
+
+		objects.push( object );
+
+		//
+
+		var object = new THREE.Object3D();
+		object.position.x = ( table[ i + 3 ] * 140 ) - 1330;
+		object.position.y = - ( table[ i + 4 ] * 180 ) + 990;
+
+		targets.table.push( object );
+
+	}
+
+	// sphere
+
+	var vector = new THREE.Vector3();
+
+	for ( var i = 0, l = objects.length; i < l; i ++ ) {
+
+		var phi = Math.acos( -1 + ( 2 * i ) / l );
+		var theta = Math.sqrt( l * Math.PI ) * phi;
+
+		var object = new THREE.Object3D();
+
+		object.position.x = 800 * Math.cos( theta ) * Math.sin( phi );
+		object.position.y = 800 * Math.sin( theta ) * Math.sin( phi );
+		object.position.z = 800 * Math.cos( phi );
+
+		vector.copy( object.position ).multiplyScalar( 2 );
+
+		object.lookAt( vector );
+
+		targets.sphere.push( object );
+
+	}
+
+	// helix
+
+	var vector = new THREE.Vector3();
+
+	for ( var i = 0, l = objects.length; i < l; i ++ ) {
+
+		var phi = i * 0.175 + Math.PI;
+
+		var object = new THREE.Object3D();
+
+		object.position.x = 900 * Math.sin( phi );
+		object.position.y = - ( i * 8 ) + 450;
+		object.position.z = 900 * Math.cos( phi );
+
+		vector.x = object.position.x * 2;
+		vector.y = object.position.y;
+		vector.z = object.position.z * 2;
+
+		object.lookAt( vector );
+
+		targets.helix.push( object );
+
+	}
+
+	// grid
+
+	for ( var i = 0; i < objects.length; i ++ ) {
+
+		var object = new THREE.Object3D();
+
+		object.position.x = ( ( i % 5 ) * 400 ) - 800;
+		object.position.y = ( - ( Math.floor( i / 5 ) % 5 ) * 400 ) + 800;
+		object.position.z = ( Math.floor( i / 25 ) ) * 1000 - 2000;
+
+		targets.grid.push( object );
+
+	}
+
+	//
+
+	renderer = new THREE.CSS3DRenderer();
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	renderer.domElement.style.position = 'absolute';
+	document.getElementById( 'container' ).appendChild( renderer.domElement );
+
+	//
+
+	controls = new THREE.TrackballControls( camera, renderer.domElement );
+	controls.rotateSpeed = 0.6;
+	controls.minDistance = 500;
+	controls.maxDistance = 6000;
+	controls.addEventListener( 'change', render );
+
+	var button = document.getElementById( 'table' );
+	button.addEventListener( 'click', function ( event ) {
+
+		transform( targets.table, 2000 );
+
+	}, false );
+
+	var button = document.getElementById( 'sphere' );
+	button.addEventListener( 'click', function ( event ) {
+
+		transform( targets.sphere, 2000 );
+
+	}, false );
+
+	var button = document.getElementById( 'helix' );
+	button.addEventListener( 'click', function ( event ) {
+
+		transform( targets.helix, 2000 );
+
+	}, false );
+
+	var button = document.getElementById( 'grid' );
+	button.addEventListener( 'click', function ( event ) {
+
+		transform( targets.grid, 2000 );
+
+	}, false );
+
+	transform( targets.table, 5000 );
+
+	//
+
+	window.addEventListener( 'resize', onWindowResize, false );
+
+}
+
+function transform( targets, duration ) {
+
+	TWEEN.removeAll();
+
+	for ( var i = 0; i < objects.length; i ++ ) {
+
+		var object = objects[ i ];
+		var target = targets[ i ];
+
+		new TWEEN.Tween( object.position )
+			.to( { x: target.position.x, y: target.position.y, z: target.position.z }, Math.random() * duration + duration )
+			.easing( TWEEN.Easing.Exponential.InOut )
+			.start();
+
+		new TWEEN.Tween( object.rotation )
+			.to( { x: target.rotation.x, y: target.rotation.y, z: target.rotation.z }, Math.random() * duration + duration )
+			.easing( TWEEN.Easing.Exponential.InOut )
+			.start();
+
+	}
+
+	new TWEEN.Tween( this )
+		.to( {}, duration * 2 )
+		.onUpdate( render )
+		.start();
+
+}
+
+function onWindowResize() {
+
+	camera.aspect = window.innerWidth / window.innerHeight;
+	camera.updateProjectionMatrix();
+
+	renderer.setSize( window.innerWidth, window.innerHeight );
+
+	render();
+
+}
+
+function animate() {
+
+	requestAnimationFrame( animate );
+
+	TWEEN.update();
+
+	controls.update();
+
+}
+
+function render() {
+
+	renderer.render( scene, camera );
+
+}
+
+</script>
+</body>
+</html>
